@@ -1,0 +1,7 @@
+reset
+clear
+as fib fib
+ld fib
+set R0 24
+set PC 0
+break set END

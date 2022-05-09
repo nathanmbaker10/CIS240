@@ -1,0 +1,119 @@
+		 .CODE
+		 .FALIGN
+main
+	;;;;prologue;;;;
+	ADD R6 R6 #-3
+	STR R7 R6 #1
+	STR R5 R6 #0
+	ADD R5 R6 #0
+	;;;function body;;;;
+	CONST R3 #5
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #6
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #10
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #244
+	HICONST R3 #1
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	LDR R7 R6 #0
+	ADD R6 R6 #1
+	LDR R2 R6 #0
+	ADD R6 R6 #1
+	CMP R7 R2
+	BRzp ge_0
+	CONST R4 #0
+	STR R4 R6 #-1
+	ADD R6 R6 #-1
+	JMP END_ge_0
+ge_0
+	CONST R4 #1
+	STR R4 R6 #-1
+	ADD R6 R6 #-1
+END_ge_0
+IF_1
+	LDR R7 R6 #0
+	ADD R6 R6 #1
+	CMPI R7 #0
+	BRnz ELSE_1
+	LDR R7 R6 #0
+	ADD R6 R6 #1
+	LDR R2 R6 #0
+	ADD R6 R6 #1
+	CMP R7 R2
+	BRzp ge_1
+	CONST R4 #0
+	STR R4 R6 #-1
+	ADD R6 R6 #-1
+	JMP END_ge_1
+ge_1
+	CONST R4 #1
+	STR R4 R6 #-1
+	ADD R6 R6 #-1
+END_ge_1
+IF_2
+	LDR R7 R6 #0
+	ADD R6 R6 #1
+	CMPI R7 #0
+	BRnz ELSE_2
+	CONST R3 #0
+	HICONST R3 #124
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #20
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #100
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #100
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #14
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	JSR lc4_draw_rect
+	ADD R6 R6 #-1
+ELSE_2
+END_IF_2
+	BRnzp END_IF_1
+ELSE_1
+	CONST R3 #0
+	HICONST R3 #51
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #20
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #100
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	LDR R7 R6 #0
+	ADD R6 R6 #1
+	LDR R2 R6 #0
+	ADD R6 R6 #1
+	STR R7 R6 #-1
+	ADD R6 R6 #-1
+	STR R2 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #100
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	CONST R3 #14
+	STR R3 R6 #-1
+	ADD R6 R6 #-1
+	JSR lc4_draw_rect
+	ADD R6 R6 #-1
+END_IF_1
+	;;;;epilogue;;;;
+	LDR R7 R6 #0
+	STR R7 R5 #2
+	ADD R6 R5 #0
+	LDR R5 R6 #0
+	LDR R7 R6 #1
+	ADD R6 R6 #3
+	RET

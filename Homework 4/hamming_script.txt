@@ -1,0 +1,8 @@
+reset
+clear
+as hamming hamming
+ld hamming
+set PC 0
+set R0 3
+set R1 2
+break set END
